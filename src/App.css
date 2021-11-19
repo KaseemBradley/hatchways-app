@@ -1,38 +1,112 @@
-.App {
-  text-align: center;
+body {
+  background-color: lightgray;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.student-name {
+  font-family: "Raleway", sans-serif;
+  font-size: xx-large;
+  font-weight: 900;
+  text-transform: uppercase;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.main-container {
+  height: 600px;
+  background-color: white;
+  margin: 5% 20% 1% 20%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  text-align: left;
+  padding-left: 2%;
+  font-family: "Raleway", sans-serif;
+  line-height: 1;
+  border-radius: 10px;
+  box-shadow: 1px 2px #888888;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.student-img {
+  margin-right: 5%;
+  width: 150px;
+  float: left;
+  border-radius: 50%;
+  border: 1px solid lightgray;
+}
+
+.student-info {
+  text-indent: 2%;
+  border-bottom: 1px solid lightgray;
+  line-height: 0.5rem;
+  margin-right: 3%;
+}
+
+input {
+  font-family: "Raleway", sans-serif;
+  border: none;
+  appearance: none;
+  padding: 12px;
+  width: 90%;
+  font-size: 1.1rem;
+  outline: none;
+  border-bottom: 2px solid gray;
+  padding-top: 30px;
+  padding-bottom: 5px;
+}
+
+.all-grades {
+  display: flex;
+  margin-left: 24.5%;
+  line-height: 0.5rem;
+  padding-left: 1.7%;
+}
+
+.tests {
+  margin-right: 20px;
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.toggle-button {
+  background-color: white;
+  margin-top: -170px;
+  height: 40px;
+  border: none;
+  color: gray;
+  font-size: 3rem;
+  margin-right: 7%;
+}
+
+.button-container {
+  display: flex;
+  justify-content: right;
+}
+
+.add-tag-container {
+  width: 60%;
+  margin-left: 25%;
+}
+
+input.add-tag {
+  margin-bottom: 25px;
+  border-bottom: 1px solid lightgray;
+  width: 50%;
+  margin-right: 200px;
+}
+
+.tag-container {
+  width: 75%;
+  display: flex;
+}
+
+.tag-card {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
+  height: 32px;
+  margin: 0 2%;
+  background-color: lightgray;
+  border-radius: 4px;
+  font-family: "Raleway", sans-serif;
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  text-align: center;
 }
