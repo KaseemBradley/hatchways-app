@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 import GradeList from "./GradeList";
-// import AddTag from "./AddTag";
 
 const Student = ({ studentData, addTag }) => {
-  //   const [tag, setTag] = useState([]);
   const [tags, setTags] = useState([]);
   const [tag, setTag] = useState("");
   let grades = []; // array to store grades converted to ints
@@ -62,8 +60,7 @@ const Student = ({ studentData, addTag }) => {
           </div>
         </GradeList>
         <div className="add-tag-container">
-          {/* <AddTag /> */}
-
+          {/* add tag to student */}
           <div>
             <div className="tag-container">
               {studentData.tags.map((tag) => {

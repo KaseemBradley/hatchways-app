@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 
+// collapsible grades list
 function GradeList({ children }) {
   const [isOpen, setIsOpen] = useState(false);
   return (

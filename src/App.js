@@ -4,18 +4,6 @@ import axios from "axios";
 import { STUDENT_URL } from "./index";
 import Student from "./components/Student";
 
-// student.tags.includes(searchedTag)
-// {tag: 'tag1', id: '3'}
-// students.map(student => {
-//   if (id == passed in id) {
-//     {...student, tags: [...student.tags, newTag]}
-//     add tags to this student
-//   }
-//   return student
-// })
-// setStudentData()
-// add tag to arr of tags
-// map over students, find correct student, add tags arr to student obj
 function App() {
   const [studentData, setStudentData] = useState([]);
   const [searchName, setSearchName] = useState("");
@@ -35,20 +23,19 @@ function App() {
       });
   };
 
+  // adding tag to studentData Object
   const addTag = (tag, studentId) => {
-    const s = studentData.map((student) => {
+    const studentTags = studentData.map((student) => {
       if (student.id === studentId) {
-        console.log("match");
         return { ...student, tags: [...student.tags, tag] };
       }
       return student;
     });
-    for (let i = 0; i < s.length; i++) {
-      console.log(s[i].tags);
-    }
-    setStudentData(s);
+
+    setStudentData(studentTags);
   };
 
+  // Filtering based on name and tag being searched
   const getStudentsFilteredBySearchTerm = () => {
     if (studentData.length === 0) {
       return [];
@@ -56,12 +43,13 @@ function App() {
 
     return studentData.filter(({ firstName, lastName, tags }) => {
       const lowerCaseSearchTerm = searchName.toLowerCase();
+      const lowerCaseTag = searchTag.toLowerCase();
       const nameMatches =
         firstName.toLowerCase().includes(lowerCaseSearchTerm) ||
         lastName.toLowerCase().includes(lowerCaseSearchTerm);
       let tagMatches = false;
       tags.forEach((tag) => {
-        if (tag.includes(searchTag)) {
+        if (tag.toLowerCase().includes(lowerCaseTag)) {
           tagMatches = true;
         }
       });
